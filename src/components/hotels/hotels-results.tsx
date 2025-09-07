@@ -21,7 +21,7 @@ const mockHotels = [
     name: "Grand Luxury Resort",
     destination: "Santorini",
     description: "Stunning clifftop resort with infinity pools and sunset views",
-    images: ["/luxury-hotel-resort-with-infinity-pool-overlooking.jpg"],
+    images: ["/resort.jpg"],
     rating: 4.9,
     reviewCount: 1247,
     pricePerNight: 450,
@@ -36,7 +36,7 @@ const mockHotels = [
     name: "Tropical Paradise Hotel",
     destination: "Bali",
     description: "Beachfront luxury with traditional Balinese architecture",
-    images: ["/luxury-tropical-beach-resort-with-crystal-clear-wa.jpg"],
+    images: ["/hotels.jpg"],
     rating: 4.8,
     reviewCount: 892,
     pricePerNight: 320,
@@ -78,10 +78,10 @@ export function HotelsResults({ hotels, loading }: HotelsResultsProps) {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             whileHover={{ y: -5 }}
           >
-            <Card className="glass-card border-0 overflow-hidden hover:shadow-xl transition-all duration-500">
+            <Card className="glass-card py-0 border-0 overflow-hidden hover:shadow-xl transition-all duration-500">
               <CardContent className="p-0">
                 <div className="flex flex-col lg:flex-row">
-                  <div className="relative w-full lg:w-80 h-64 lg:h-48 overflow-hidden">
+                  <div className="relative w-full lg:w-80 h-64 overflow-hidden">
                     <Image
                       src={hotel.images[0] || "/placeholder.svg"}
                       alt={hotel.name}

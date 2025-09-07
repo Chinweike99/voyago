@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Afacad } from "next/font/google"
+import { Plus_Jakarta_Sans } from "next/font/google"
 // import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
@@ -8,9 +8,8 @@ import { Footer } from "@/components/layout/footer"
 import { Suspense } from "react"
 
 // Configure Afacad font
-const afacad = Afacad({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-afacad",
   weight: ["400", "500", "600", "700"],
   display: "swap",
 })
@@ -38,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${afacad.variable} font-sans antialiased`}>
+      <body className={`${plusJakartaSans.className} font-sans antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Header />
           <main className="min-h-screen">{children}</main>
