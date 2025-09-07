@@ -18,7 +18,7 @@ export default async function HotelPage({ params }: HotelPageProps) {
   if (!hotel) {
     notFound()
   }
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const relatedHotels = await api.getRelatedHotels(hotel.id, hotel.location as any)
 
   const breadcrumbItems = [

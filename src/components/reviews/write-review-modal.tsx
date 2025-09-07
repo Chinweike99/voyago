@@ -9,11 +9,14 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import Image from "next/image"
 
 interface WriteReviewModalProps {
   isOpen: boolean
   onClose: () => void
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   item: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSubmit: (review: any) => void
 }
 
@@ -162,10 +165,12 @@ export function WriteReviewModal({ isOpen, onClose, item, onSubmit }: WriteRevie
               <div className="flex gap-2 mt-3">
                 {photos.map((photo, index) => (
                   <div key={index} className="relative">
-                    <img
+                    <Image
                       src={photo || "/placeholder.svg"}
                       alt={`Upload ${index + 1}`}
                       className="w-16 h-16 rounded-lg object-cover"
+                      width={8}
+                      height={8}
                     />
                     <button
                       type="button"

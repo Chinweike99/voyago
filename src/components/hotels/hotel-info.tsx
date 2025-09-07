@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface HotelInfoProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hotel: any
 }
 
@@ -75,6 +76,7 @@ export function HotelInfo({ hotel }: HotelInfoProps) {
 
         <TabsContent value="rooms">
           <div className="grid gap-4">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {hotel.roomTypes?.map((room: any, index: number) => (
               <Card key={index} className="glass-card">
                 <CardContent className="p-6">
@@ -112,6 +114,7 @@ export function HotelInfo({ hotel }: HotelInfoProps) {
               </div>
               <div className="space-y-3">
                 <h4 className="font-semibold">Nearby Attractions</h4>
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {hotel.nearbyAttractions?.map((attraction: any, index: number) => (
                   <div key={index} className="flex justify-between items-center">
                     <span>{attraction.name}</span>

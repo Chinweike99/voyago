@@ -55,7 +55,7 @@ export function TestimonialsSection() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Don't just take our word for it. Here's what our satisfied customers have to say about their experiences.
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers have to say about their experiences.
           </p>
         </motion.div>
 
@@ -79,7 +79,7 @@ export function TestimonialsSection() {
                     </div>
                   </div>
 
-                  <p className="text-muted-foreground mb-6 text-pretty leading-relaxed">"{testimonial.comment}"</p>
+                  <p className="text-muted-foreground mb-6 text-pretty leading-relaxed">&quot;{testimonial.comment}&quot;</p>
 
                   <div className="flex items-center space-x-4">
                     <Avatar className="w-12 h-12">

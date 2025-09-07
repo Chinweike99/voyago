@@ -38,7 +38,7 @@ const hotelTypes = [
   "Villa",
 ]
 
-export function HotelsFilters({ filters, onFiltersChange, resultCount }: HotelsFiltersProps) {
+export function HotelsFilters({  resultCount }: HotelsFiltersProps) {
   return (
     <Card className="glass-card sticky top-24">
       <CardHeader>

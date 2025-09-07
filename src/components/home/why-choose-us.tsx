@@ -43,7 +43,7 @@ export function WhyChooseUs() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            We're committed to making your travel dreams come true with unparalleled service and attention to detail.
+            We&apos;re committed to making your travel dreams come true with unparalleled service and attention to detail.
           </p>
         </motion.div>
 

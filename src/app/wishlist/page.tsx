@@ -5,9 +5,9 @@ import { Heart, Trash2, Share2, Star, MapPin } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-// import { useStore } from "@/lib/store"
 import Link from "next/link"
 import { useStore } from "@/lib/store"
+import Image from "next/image"
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist } = useStore()
@@ -17,7 +17,7 @@ export default function WishlistPage() {
   }
 
   const handleShare = () => {
-    // Share wishlist functionality
+ 
     navigator.share?.({
       title: "My Travel Wishlist",
       text: "Check out my travel wishlist!",
@@ -74,6 +74,7 @@ export default function WishlistPage() {
           </motion.div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {wishlist.map((item:any, index: number) => (
               <motion.div
                 key={item.id}
@@ -83,10 +84,12 @@ export default function WishlistPage() {
               >
                 <Card className="glass-card overflow-hidden group hover:shadow-lg transition-shadow">
                   <div className="relative">
-                    <img
+                    <Image
                       src={item.image || item.images?.[0] || "/placeholder.svg"}
                       alt={item.title || item.name}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      width={100}
+                      height={22}
                     />
                     <Button
                       variant="outline"

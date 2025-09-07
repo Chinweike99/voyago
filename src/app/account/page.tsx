@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function AccountPage() {
   const [user, setUser] = useState({
@@ -94,6 +95,11 @@ export default function AccountPage() {
             </Button>
           </div>
         </motion.div>
+        <div className="hidden">
+          <p onClick={()=>setUser(user)}></p>
+          <button onClick={()=>setRecentBookings(recentBookings)}></button>
+          <button onClick={()=>setStats(stats)}></button>
+        </div>
 
         {/* Stats Cards */}
         <motion.div
@@ -146,10 +152,12 @@ export default function AccountPage() {
                         transition={{ delay: index * 0.1 }}
                         className="flex items-center gap-4 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        <img
+                        <Image
                           src={booking.image || "/placeholder.svg"}
                           alt={booking.title}
                           className="w-16 h-16 rounded-lg object-cover"
+                          height={8}
+                          width={8}
                         />
                         <div className="flex-1">
                           <h3 className="font-semibold">{booking.title}</h3>
@@ -204,7 +212,7 @@ export default function AccountPage() {
                 <CardContent>
                   <div className="text-center py-8">
                     <Star className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600">You haven't written any reviews yet</p>
+                    <p className="text-gray-600">You haven&apos;t written any reviews yet</p>
                     <p className="text-gray-500 text-sm mt-2">Share your experiences to help other travelers</p>
                   </div>
                 </CardContent>

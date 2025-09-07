@@ -25,7 +25,7 @@ export function DestinationInfo({ destination }: DestinationInfoProps) {
           <CardContent>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {destination.description} This stunning destination offers a perfect blend of natural beauty, rich
-              culture, and unforgettable experiences. Whether you're seeking adventure, relaxation, or cultural
+              culture, and unforgettable experiences. Whether you&apos;re seeking adventure, relaxation, or cultural
               immersion, {destination.name} has something special for every traveler.
             </p>
 

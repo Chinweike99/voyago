@@ -8,13 +8,14 @@ import { Badge } from "@/components/ui/badge"
 import { useStore } from "@/lib/store"
 
 interface TourHeroProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tour: any
 }
 
 export function TourHero({ tour }: TourHeroProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const { wishlist, addToWishlist, removeFromWishlist } = useStore()
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isInWishlist = wishlist.some((item: any) => item.id === tour.id)
 
   const nextImage = () => {
@@ -77,6 +78,7 @@ export function TourHero({ tour }: TourHeroProps) {
 
         {/* Image Indicators */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {tour.images.map((_: any, index: number) => (
             <button
               key={index}

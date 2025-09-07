@@ -5,6 +5,7 @@ import { Users, Globe, Award, Heart, MapPin, Plane, Camera, Shield } from "lucid
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function AboutPage() {
   const stats = [
@@ -118,8 +119,8 @@ export default function AboutPage() {
                   discovering new places.
                 </p>
                 <p>
-                  Today, we're proud to have helped over 50,000 travelers create unforgettable memories across 200+
-                  destinations worldwide. But we're just getting started.
+                  Today, we&apos;re proud to have helped over 50,000 travelers create unforgettable memories across 200+
+                  destinations worldwide. But we&apos;re just getting started.
                 </p>
               </div>
               <Link href="/contact">
@@ -127,7 +128,13 @@ export default function AboutPage() {
               </Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
-              <img src="/team-working-together-travel-office.jpg" alt="Our team" className="rounded-2xl shadow-2xl" />
+              <Image 
+              src="/team-working-together-travel-office.jpg" 
+              alt="Our team" 
+              className="rounded-2xl shadow-2xl" 
+              width={20}
+              height={20}
+              />
             </motion.div>
           </div>
         </div>
@@ -174,10 +181,13 @@ export default function AboutPage() {
                   transition={{ delay: 0.8 + index * 0.1 }}
                 >
                   <Card className="glass-card overflow-hidden">
-                    <img
+                    <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       className="w-full h-64 object-cover"
+                      width={20}
+                      height={20}
+                      sizes="100vw"
                     />
                     <CardContent className="p-6">
                       <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>

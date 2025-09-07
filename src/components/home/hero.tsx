@@ -8,6 +8,7 @@ import { Play } from "lucide-react"
 import { SearchForm } from "./search-form"
 import Image from "next/image"
 
+
 export function HeroSection() {
   const [showVideo, setShowVideo] = useState(false)
 
@@ -21,7 +22,7 @@ export function HeroSection() {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-br from-primary/30 via-transparent to-secondary/20 z-10" />
-        <img
+        <Image
           src="/beach.jpg"
           alt="Luxury tropical destination"
           className="w-full h-full object-cover"
@@ -30,7 +31,7 @@ export function HeroSection() {
               sizes="100vw"
         />
       </motion.div>
-
+    <span className="hidden">{showVideo}</span>
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         <motion.div

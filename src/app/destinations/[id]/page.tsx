@@ -61,7 +61,7 @@ export default function DestinationDetailPage() {
       <div className="min-h-screen pt-16 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Destination Not Found</h1>
-          <p className="text-muted-foreground">The destination you're looking for doesn't exist.</p>
+          <p className="text-muted-foreground">The destination you&apos;re looking for doesn&apos;t exist.</p>
         </div>
       </div>
     )

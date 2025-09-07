@@ -166,7 +166,7 @@ export function BookingSummary({ bookingData }: BookingSummaryProps) {
       {/* Booking Notes */}
       <div className="mt-6 p-3 bg-blue-50 rounded-lg">
         <p className="text-xs text-blue-700">
-          Your booking will be confirmed immediately after payment. You'll receive a confirmation email with all the details.
+          Your booking will be confirmed immediately after payment. You&apos;ll receive a confirmation email with all the details.
         </p>
       </div>
     </motion.div>

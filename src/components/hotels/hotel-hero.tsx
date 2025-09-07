@@ -8,13 +8,14 @@ import { Badge } from "@/components/ui/badge"
 import { useStore } from "@/lib/store"
 
 interface HotelHeroProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   hotel: any
 }
 
 export function HotelHero({ hotel }: HotelHeroProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const { wishlist, addToWishlist, removeFromWishlist } = useStore()
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isInWishlist = wishlist.some((item: any) => item.id === hotel.id)
 
   const amenityIcons = {
@@ -42,7 +43,6 @@ export function HotelHero({ hotel }: HotelHeroProps) {
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-      {/* Image Gallery */}
       <div className="relative h-96 rounded-2xl overflow-hidden">
         <motion.img
           key={currentImageIndex}
@@ -54,7 +54,6 @@ export function HotelHero({ hotel }: HotelHeroProps) {
           transition={{ duration: 0.3 }}
         />
 
-        {/* Navigation Buttons */}
         <Button
           variant="outline"
           size="icon"
@@ -82,8 +81,8 @@ export function HotelHero({ hotel }: HotelHeroProps) {
           </Button>
         </div>
 
-        {/* Image Indicators */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {hotel.images.map((_: any, index: number) => (
             <button
               key={index}

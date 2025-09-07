@@ -2,12 +2,10 @@ import { notFound } from "next/navigation"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { TourHero } from "@/components/tours/tour-hero"
 import { TourInfo } from "@/components/tours/tour-info"
-// import { TourReviews } from "@/components/tours/tour-reviews"
 import { RelatedTours } from "@/components/tours/related-tours"
 import { BookingWidget } from "@/components/booking/booking-widget"
 import { TourReviews } from "@/components/tours/tour-review"
 import { api } from "@/lib/app"
-// import { getTourById, getRelatedTours } from "@/lib/api"
 
 interface TourPageProps {
   params: { id: string }
@@ -19,7 +17,7 @@ export default async function TourPage({ params }: TourPageProps) {
   if (!tour) {
     notFound()
   }
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const relatedTours = await api.getRelatedTours(tour.id, tour.location as any)
 
   const breadcrumbItems = [

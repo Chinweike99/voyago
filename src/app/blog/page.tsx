@@ -219,7 +219,7 @@ export default function BlogPage() {
                 >
                   <Card className="glass-card py-0 overflow-hidden group hover:shadow-lg transition-shadow h-full">
                     <div className="relative">
-                      <img
+                      <Image
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"

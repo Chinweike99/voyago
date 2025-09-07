@@ -52,7 +52,7 @@ const mockTours = [
   },
 ]
 
-export function ToursResults({ tours, loading, filters }: ToursResultsProps) {
+export function ToursResults({ tours, loading }: ToursResultsProps) {
   const displayTours = tours.length > 0 ? tours : mockTours
 
   if (loading) {

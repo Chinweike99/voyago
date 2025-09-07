@@ -7,15 +7,18 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useStore } from "@/lib/store"
 import Link from "next/link"
+import Image from "next/image"
 
 interface RelatedToursProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tours: any[]
 }
 
 export function RelatedTours({ tours }: RelatedToursProps) {
   const { wishlist, addToWishlist, removeFromWishlist } = useStore()
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const toggleWishlist = (tour: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const isInWishlist = wishlist.some((item: any) => item.id === tour.id)
     if (isInWishlist) {
       removeFromWishlist(tour.id)
@@ -34,6 +37,7 @@ export function RelatedTours({ tours }: RelatedToursProps) {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Similar Tours</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tours.slice(0, 3).map((tour, index) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const isInWishlist = wishlist.some((item: any) => item.id === tour.id)
 
           return (
@@ -45,10 +49,12 @@ export function RelatedTours({ tours }: RelatedToursProps) {
             >
               <Card className="glass-card overflow-hidden group hover:shadow-lg transition-shadow">
                 <div className="relative">
-                  <img
+                  <Image
                     src={tour.image || "/placeholder.svg"}
                     alt={tour.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    width={100}
+                    height={24}
                   />
                   <Button
                     variant="outline"

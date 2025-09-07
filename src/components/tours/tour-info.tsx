@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface TourInfoProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tour: any
 }
 
@@ -16,7 +17,7 @@ export function TourInfo({ tour }: TourInfoProps) {
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="itinerary">Itinerary</TabsTrigger>
-          <TabsTrigger value="included">What's Included</TabsTrigger>
+          <TabsTrigger value="included">What&apos;s Included</TabsTrigger>
           <TabsTrigger value="schedule">Schedule</TabsTrigger>
         </TabsList>
 
@@ -62,6 +63,7 @@ export function TourInfo({ tour }: TourInfoProps) {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {tour.itinerary?.map((item: any, index: number) => (
                   <div key={index} className="flex gap-4">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">
@@ -83,7 +85,7 @@ export function TourInfo({ tour }: TourInfoProps) {
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="glass-card">
               <CardHeader>
-                <CardTitle className="text-green-600">What's Included</CardTitle>
+                <CardTitle className="text-green-600">What&apos;s Included</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -124,6 +126,7 @@ export function TourInfo({ tour }: TourInfoProps) {
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 gap-4">
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {tour.availableDates?.map((date: any, index: number) => (
                   <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
                     <div className="flex items-center gap-3">

@@ -9,6 +9,7 @@ import { Star, MapPin } from "lucide-react"
 // import { api } from "@/lib/api"
 import type { Destination } from "@/lib/types"
 import { api } from "@/lib/app"
+import Image from "next/image"
 
 interface RelatedDestinationsProps {
   currentDestinationId: string
@@ -23,6 +24,7 @@ export function RelatedDestinations({ currentDestinationId }: RelatedDestination
       setLoading(true)
       try {
         const data = await api.getDestinations()
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const filtered = data.filter((dest: any) => dest.id !== currentDestinationId).slice(0, 3)
         setDestinations(filtered)
       } catch (error) {
@@ -66,10 +68,13 @@ export function RelatedDestinations({ currentDestinationId }: RelatedDestination
               <Link href={`/destinations/${destination.id}`}>
                 <Card className="glass-card border-0 overflow-hidden hover:shadow-xl transition-all duration-500 group">
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={destination.image || "/placeholder.svg"}
                       alt={destination.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={100}
+                      height={100}
+                      sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 

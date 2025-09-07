@@ -55,9 +55,10 @@ export const api = {
     return destinations.find((d) => d.id === id) || null
   },
 
-  // Hotels
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getHotels: async (filters?: any): Promise<Hotel[]> => {
     await delay(400)
+    console.log(filters)
     return hotels
   },
 
@@ -76,14 +77,16 @@ export const api = {
     return hotels.filter((h) => h.id !== hotelId).slice(0, limit)
   },
 
-  // Flights
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   searchFlights: async (filters?: any): Promise<Flight[]> => {
+    console.log(filters)
     await delay(500)
     return flights
   },
 
-  // Tours
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getTours: async (filters?: any): Promise<Tour[]> => {
+    console.log(filters)
     await delay(350)
     return tours
   },

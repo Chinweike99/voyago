@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function BookingConfirmation() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [bookingData, setBookingData] = useState<any>(null)
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function BookingConfirmation() {
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Booking Confirmed!</h1>
           <p className="text-xl text-gray-600">
-            Your adventure awaits. We've sent a confirmation email to {bookingData.email}
+            Your adventure awaits. We&apos;ve sent a confirmation email to {bookingData.email}
           </p>
         </motion.div>
 
@@ -119,7 +120,7 @@ export default function BookingConfirmation() {
             </Button>
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We'll send you updates about your booking and travel tips to help you prepare for your trip. If you have any
+            We&apos;ll send you updates about your booking and travel tips to help you prepare for your trip. If you have any
             questions, our support team is available 24/7.
           </p>
         </motion.div>

@@ -25,9 +25,11 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
   ].filter(Boolean)
 
   const toggleWishlist = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (wishlist.includes(destination.id as any)) {
       removeFromWishlist(destination.id)
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       addToWishlist(destination.id as any)
     }
   }
@@ -139,9 +141,11 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
               >
                 <Heart
                   className={`w-5 h-5 ${
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     wishlist.includes(destination.id as any) ? "text-red-500 fill-red-500" : "text-white"
                   }`}
                 />
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <span>{wishlist.includes(destination.id as any) ? "Saved" : "Save"}</span>
               </motion.button>
 

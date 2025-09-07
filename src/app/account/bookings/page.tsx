@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 // import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import Link from "next/link"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import Image from "next/image"
 
 export default function BookingsPage() {
   const [bookings] = useState([
@@ -114,10 +115,12 @@ export default function BookingsPage() {
                       <Card className="glass-card">
                         <CardContent className="p-6">
                           <div className="flex items-start gap-6">
-                            <img
+                            <Image
                               src={booking.image || "/placeholder.svg"}
                               alt={booking.title}
                               className="w-20 h-20 rounded-lg object-cover"
+                              height={10}
+                              width={10}
                             />
                             <div className="flex-1">
                               <div className="flex items-start justify-between mb-4">
@@ -139,6 +142,7 @@ export default function BookingsPage() {
                                       <div>
                                         <p className="text-sm font-medium">Check-in</p>
                                         <p className="text-sm text-gray-600">
+                                          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                           {new Date(booking.checkIn as any).toLocaleDateString()}
                                         </p>
                                       </div>
@@ -148,6 +152,7 @@ export default function BookingsPage() {
                                       <div>
                                         <p className="text-sm font-medium">Check-out</p>
                                         <p className="text-sm text-gray-600">
+                                          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                           {new Date(booking.checkOut as any).toLocaleDateString()}
                                         </p>
                                       </div>
@@ -211,10 +216,12 @@ export default function BookingsPage() {
                     <Card className="glass-card">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-6">
-                          <img
+                          <Image
                             src={booking.image || "/placeholder.svg"}
                             alt={booking.title}
                             className="w-20 h-20 rounded-lg object-cover"
+                            height={10}
+                            width={10}
                           />
                           <div className="flex-1">
                             <div className="flex items-start justify-between mb-4">

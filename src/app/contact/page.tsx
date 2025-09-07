@@ -88,7 +88,7 @@ export default function ContactPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions about your trip or need assistance? We're here to help make your travel dreams come true.
+            Have questions about your trip or need assistance? We&apos;re here to help make your travel dreams come true.
           </p>
         </motion.div>
 

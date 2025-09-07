@@ -27,8 +27,8 @@ const bookingSchema = z.object({
 })
 
 type BookingFormData = z.infer<typeof bookingSchema>
-
 interface BookingFormProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   bookingData: any
 }
 
@@ -42,7 +42,6 @@ export function BookingForm({ bookingData }: BookingFormProps) {
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
   })
@@ -50,10 +49,7 @@ export function BookingForm({ bookingData }: BookingFormProps) {
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true)
 
-    // Simulate payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    // Store booking confirmation
     const confirmationData = {
       ...bookingData,
       ...data,

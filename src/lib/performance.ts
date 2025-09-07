@@ -1,4 +1,5 @@
 import React from "react"
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => any>(func: T, wait: number): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout
   return (...args: Parameters<T>) => {
@@ -6,7 +7,7 @@ export function debounce<T extends (...args: any[]) => any>(func: T, wait: numbe
     timeout = setTimeout(() => func(...args), wait)
   }
 }
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
   let inThrottle: boolean
   return (...args: Parameters<T>) => {
@@ -19,6 +20,7 @@ export function throttle<T extends (...args: any[]) => any>(func: T, limit: numb
 }
 
 // Lazy loading utility
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function lazyLoad<T extends React.ComponentType<any>>(importFunc: () => Promise<{ default: T }>): React.LazyExoticComponent<T> {
   return React.lazy(importFunc)
 }
@@ -55,6 +57,7 @@ export function isInViewport(element: HTMLElement): boolean {
 // Memory usage monitoring (development only)
 export function logMemoryUsage() {
   if (typeof window !== "undefined" && "memory" in performance) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const memory = (performance as any).memory
     console.log({
       usedJSHeapSize: `${Math.round(memory.usedJSHeapSize / 1048576)} MB`,

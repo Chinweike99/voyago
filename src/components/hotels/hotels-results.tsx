@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, MapPin, Wifi, Car } from "lucide-react"
 import type { Hotel, SearchFilters } from "@/lib/types"
+import Image from "next/image"
 
 interface HotelsResultsProps {
   hotels: Hotel[]
@@ -47,7 +48,7 @@ const mockHotels = [
   },
 ]
 
-export function HotelsResults({ hotels, loading, filters }: HotelsResultsProps) {
+export function HotelsResults({ hotels, loading }: HotelsResultsProps) {
   const displayHotels = hotels.length > 0 ? hotels : mockHotels
 
   if (loading) {
@@ -81,10 +82,13 @@ export function HotelsResults({ hotels, loading, filters }: HotelsResultsProps) 
               <CardContent className="p-0">
                 <div className="flex flex-col lg:flex-row">
                   <div className="relative w-full lg:w-80 h-64 lg:h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={hotel.images[0] || "/placeholder.svg"}
                       alt={hotel.name}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      width={100}
+                      height={100}
+                      sizes="100vw"
                     />
                   </div>
 

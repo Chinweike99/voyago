@@ -20,7 +20,7 @@ const durations = ["Half Day", "Full Day", "2-3 Days", "4-7 Days", "1+ Week"]
 
 const difficulties = ["Easy", "Moderate", "Challenging"]
 
-export function ToursFilters({ filters, onFiltersChange, resultCount }: ToursFiltersProps) {
+export function ToursFilters({ resultCount }: ToursFiltersProps) {
   return (
     <Card className="glass-card sticky top-24">
       <CardHeader>

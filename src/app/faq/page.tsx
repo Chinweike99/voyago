@@ -234,7 +234,7 @@ export default function FAQPage() {
             <Search className="w-12 h-12 text-gray-400 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">No results found</h3>
             <p className="text-gray-600 mb-6">
-              We couldn't find any questions matching "{searchQuery}". Try different keywords or contact us directly.
+              We couldn&apos;t find any questions matching &apos;{searchQuery}&apos;. Try different keywords or contact us directly.
             </p>
             <Link href="/contact">
               <Button>Contact Support</Button>
