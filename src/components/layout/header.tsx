@@ -11,9 +11,9 @@ import { useAppStore } from "@/lib/store"
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Explore", href: "/explore" },
+//   { name: "Explore", href: "/explore" },
   { name: "Hotels", href: "/hotels" },
-  { name: "Flights", href: "/flights" },
+  { name: "Flights", href: "/flight" },
   { name: "Tours", href: "/tours" },
   { name: "Blog", href: "/blog" },
 ]

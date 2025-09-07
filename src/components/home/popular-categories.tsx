@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Hotel, Plane, MapPin, Car } from "lucide-react"
+import Image from "next/image"
 
 const categories = [
   {
@@ -12,15 +13,15 @@ const categories = [
     icon: Hotel,
     href: "/hotels",
     gradient: "from-blue-500 to-purple-600",
-    image: "/luxury-hotel-resort-with-infinity-pool-overlooking.jpg",
+    image: "/hotels.jpg",
   },
   {
     title: "Flight Deals",
     description: "Best prices on flights globally",
     icon: Plane,
-    href: "/flights",
+    href: "/flight",
     gradient: "from-emerald-500 to-teal-600",
-    image: "/images/flight-thumb-1.png",
+    image: "/flight.jpg",
   },
   {
     title: "Guided Tours",
@@ -28,7 +29,7 @@ const categories = [
     icon: MapPin,
     href: "/tours",
     gradient: "from-orange-500 to-red-600",
-    image: "/tour-guide-showing-ancient-temple-to-tourists.jpg",
+    image: "/tours.jpg",
   },
   {
     title: "Car Rentals",
@@ -36,7 +37,7 @@ const categories = [
     icon: Car,
     href: "/cars",
     gradient: "from-purple-500 to-pink-600",
-    image: "/luxury-convertible-car-on-scenic-coastal-road.jpg",
+    image: "/cars.jpg",
   },
 ]
 
@@ -72,15 +73,18 @@ export function PopularCategories() {
               className="group"
             >
               <Link href={category.href}>
-                <Card className="glass-card border-0 overflow-hidden hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
+                <Card className="glass-card py-0 border-0 overflow-hidden hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={category.image || "/placeholder.svg"}
                       alt={category.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={100}
+                      height={100}
+                      sizes="100vw"
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-80 group-hover:opacity-70 transition-opacity`}
+                      className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-50 group-hover:opacity-20 transition-opacity`}
                     />
 
                     <div className="absolute inset-0 flex items-center justify-center">

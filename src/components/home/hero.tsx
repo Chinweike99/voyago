@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
 import { SearchForm } from "./search-form"
+import Image from "next/image"
 
 export function HeroSection() {
   const [showVideo, setShowVideo] = useState(false)
@@ -19,11 +20,14 @@ export function HeroSection() {
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 z-10" />
+        <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-br from-primary/30 via-transparent to-secondary/20 z-10" />
         <img
-          src="/luxury-tropical-beach-resort-with-crystal-clear-wa.jpg"
+          src="/beach.jpg"
           alt="Luxury tropical destination"
           className="w-full h-full object-cover"
+           width={150}
+            height={150}
+              sizes="100vw"
         />
       </motion.div>
 
@@ -33,7 +37,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto mt-20 md:mt-5"
         >
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance"
@@ -48,7 +52,7 @@ export function HeroSection() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-8 text-pretty max-w-2xl mx-auto"
+            className="text-xl md:text-2xl bg-black/20 shadow-2xl rounded-lg p-2 text-white mb-8 text-pretty max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
@@ -73,7 +77,7 @@ export function HeroSection() {
             <Button
               variant="ghost"
               size="lg"
-              className="text-white border-white/30 hover:bg-white/10 px-8 py-4 text-lg"
+              className="gradient-primary text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform"
               onClick={() => setShowVideo(true)}
             >
               <Play className="w-5 h-5 mr-2" />

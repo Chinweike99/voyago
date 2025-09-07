@@ -11,6 +11,7 @@ import { Star, Heart, MapPin } from "lucide-react"
 import type { Destination } from "@/lib/types"
 import { useAppStore } from "@/lib/store"
 import { api } from "@/lib/app"
+import Image from "next/image"
 
 export function FeaturedDestinations() {
   const [destinations, setDestinations] = useState<Destination[]>([])
@@ -84,12 +85,15 @@ export function FeaturedDestinations() {
               whileHover={{ y: -10 }}
               className="group"
             >
-              <Card className="glass-card border-0 overflow-hidden hover:shadow-2xl transition-all duration-500">
+              <Card className="glass-card py-0 border-0 overflow-hidden hover:shadow-2xl transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <Image
                     src={destination.image || "/placeholder.svg"}
                     alt={destination.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    width={150}
+                    height={150}
+                     sizes="100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 

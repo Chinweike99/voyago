@@ -32,11 +32,8 @@ export function SearchForm() {
       checkOut: checkOut?.toISOString(),
       guests: Number.parseInt(guests),
     })
-
-    // Simulate search delay
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    // Navigate to explore page with search params
     const params = new URLSearchParams()
     if (destination) params.set("destination", destination)
     if (checkIn) params.set("checkIn", checkIn.toISOString())
@@ -78,7 +75,7 @@ export function SearchForm() {
                 <Button
                   variant="outline"
                   className={cn(
-                    "w-full h-12 justify-start text-left font-normal bg-background/50 border-border/50 hover:bg-background",
+                    "w-full h-12 justify-start text-left font-normal bg-background/50 border-border/50 hover:bg-primary",
                     !checkIn && "text-muted-foreground",
                   )}
                 >
@@ -106,7 +103,7 @@ export function SearchForm() {
                 <Button
                   variant="outline"
                   className={cn(
-                    "w-full h-12 justify-start text-left font-normal bg-background/50 border-border/50 hover:bg-background",
+                    "w-full h-12 justify-start text-left font-normal bg-background/50 border-border/50 hover:bg-primary",
                     !checkOut && "text-muted-foreground",
                   )}
                 >
