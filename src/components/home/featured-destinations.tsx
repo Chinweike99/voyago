@@ -163,9 +163,9 @@ export function FeaturedDestinations() {
           className="text-center mt-12"
         >
           <Link href="/explore">
-            <Button variant="outline" size="lg" className="px-8 bg-transparent">
+            {/* <Button variant="outline" size="lg" className="px-8 bg-transparent">
               View All Destinations
-            </Button>
+            </Button> */}
           </Link>
         </motion.div>
       </div>
