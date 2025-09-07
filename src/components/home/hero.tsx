@@ -33,7 +33,7 @@ export function HeroSection() {
       </motion.div>
     <span className="hidden">{showVideo}</span>
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 text-center">
+      <div className="relative z-20 container mx-auto px-4 text-center my-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
