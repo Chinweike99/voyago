@@ -16,7 +16,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with parallax effect */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 "
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -38,7 +38,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-4xl mx-auto mt-20 md:mt-5"
+          className="max-w-4xl mx-auto mt-28"
         >
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance"
