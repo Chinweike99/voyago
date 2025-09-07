@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, Clock, Users, MapPin } from "lucide-react"
 import type { Tour, SearchFilters } from "@/lib/types"
+import Image from "next/image"
 
 interface ToursResultsProps {
   tours: Tour[]
@@ -20,7 +21,7 @@ const mockTours = [
     name: "Ancient Temples & Culture Tour",
     destination: "Bali",
     description: "Explore ancient Hindu temples and traditional villages with expert local guides",
-    images: ["/tour-guide-showing-ancient-temple-to-tourists.jpg"],
+    images: ["/indonesia.jpg"],
     duration: "Full Day (8 hours)",
     price: 89,
     currency: "USD",
@@ -37,7 +38,7 @@ const mockTours = [
     name: "Santorini Sunset Photography Tour",
     destination: "Santorini",
     description: "Capture the perfect sunset shots at the most scenic locations in Santorini",
-    images: ["/santorini-sunset.png"],
+    images: ["/greece.jpg"],
     duration: "Half Day (4 hours)",
     price: 125,
     currency: "USD",
@@ -81,14 +82,17 @@ export function ToursResults({ tours, loading, filters }: ToursResultsProps) {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             whileHover={{ y: -5 }}
           >
-            <Card className="glass-card border-0 overflow-hidden hover:shadow-xl transition-all duration-500">
+            <Card className="glass-card py-0 border-0 overflow-hidden hover:shadow-xl transition-all duration-500">
               <CardContent className="p-0">
                 <div className="flex flex-col lg:flex-row">
-                  <div className="relative w-full lg:w-80 h-64 lg:h-48 overflow-hidden">
-                    <img
+                  <div className="relative w-full lg:w-80 h-64 md:h-64 overflow-hidden">
+                    <Image
                       src={tour.images[0] || "/placeholder.svg"}
                       alt={tour.name}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      width={150}
+                      height={150}
+                      sizes="100vw"
                     />
                     <div className="absolute top-4 left-4">
                       <Badge className="bg-white/20 backdrop-blur-sm text-white border-0">

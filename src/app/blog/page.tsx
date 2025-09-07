@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -18,7 +19,7 @@ export default function BlogPage() {
       id: 1,
       title: "10 Hidden Gems in Southeast Asia You Must Visit",
       excerpt: "Discover breathtaking destinations off the beaten path that will transform your travel experience.",
-      image: "/hidden-tropical-paradise.jpg",
+      image: "/southAsia.jpg",
       author: "Emma Wilson",
       date: "2024-01-15",
       readTime: "8 min read",
@@ -29,7 +30,7 @@ export default function BlogPage() {
       id: 2,
       title: "The Ultimate Guide to Budget Travel in Europe",
       excerpt: "Learn how to explore Europe's most beautiful cities without breaking the bank.",
-      image: "/european-city-budget-travel.jpg",
+      image: "/europe.jpg",
       author: "Marcus Chen",
       date: "2024-01-12",
       readTime: "12 min read",
@@ -40,7 +41,7 @@ export default function BlogPage() {
       id: 3,
       title: "Sustainable Tourism: How to Travel Responsibly",
       excerpt: "Make a positive impact while exploring the world with these eco-friendly travel practices.",
-      image: "/sustainable-eco-tourism.png",
+      image: "/ecoTravel.jpg",
       author: "Sarah Green",
       date: "2024-01-10",
       readTime: "6 min read",
@@ -51,7 +52,7 @@ export default function BlogPage() {
       id: 4,
       title: "Best Photography Spots Around the World",
       excerpt: "Capture stunning memories at these Instagram-worthy locations that will amaze your followers.",
-      image: "/photography-scenic-landscape.jpg",
+      image: "/photo.jpg",
       author: "David Kim",
       date: "2024-01-08",
       readTime: "10 min read",
@@ -62,7 +63,7 @@ export default function BlogPage() {
       id: 5,
       title: "Cultural Etiquette: Respecting Local Customs While Traveling",
       excerpt: "Navigate different cultures with confidence and respect using these essential guidelines.",
-      image: "/cultural-diversity-travel.jpg",
+      image: "/culture.jpg",
       author: "Aisha Patel",
       date: "2024-01-05",
       readTime: "7 min read",
@@ -73,7 +74,7 @@ export default function BlogPage() {
       id: 6,
       title: "Solo Female Travel: Safety Tips and Empowering Destinations",
       excerpt: "Embark on solo adventures with confidence using our comprehensive safety guide.",
-      image: "/solo-female-traveler.jpg",
+      image: "/femaleTravel.jpg",
       author: "Lisa Rodriguez",
       date: "2024-01-03",
       readTime: "9 min read",
@@ -103,8 +104,8 @@ export default function BlogPage() {
   const featuredPost = blogPosts[0]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-8">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-8 ">
+      <div className="container mx-auto px-4 max-w-7xl mt-32">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Travel Blog</h1>
@@ -115,13 +116,16 @@ export default function BlogPage() {
 
         {/* Featured Post */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-          <Card className="glass-card overflow-hidden mb-12">
+          <Card className="glass-card py-0 overflow-hidden mb-12">
             <div className="md:flex">
               <div className="md:w-1/2">
-                <img
+                <Image
                   src={featuredPost.image || "/placeholder.svg"}
                   alt={featuredPost.title}
                   className="w-full h-64 md:h-full object-cover"
+                  width={150}
+                  height={150}
+                  sizes="100vw"
                 />
               </div>
               <div className="md:w-1/2 p-8">
@@ -164,7 +168,7 @@ export default function BlogPage() {
             className="lg:col-span-1"
           >
             {/* Search */}
-            <Card className="glass-card mb-6">
+            <Card className="glass-card  mb-6">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-4">Search Posts</h3>
                 <div className="relative">
@@ -213,12 +217,15 @@ export default function BlogPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
                 >
-                  <Card className="glass-card overflow-hidden group hover:shadow-lg transition-shadow h-full">
+                  <Card className="glass-card py-0 overflow-hidden group hover:shadow-lg transition-shadow h-full">
                     <div className="relative">
                       <img
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        width={150}
+                        height={150}
+                        sizes="100vw"
                       />
                       <Badge className="absolute top-3 left-3" variant="secondary">
                         {categories.find((c) => c.id === post.category)?.name}
